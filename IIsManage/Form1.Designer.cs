@@ -33,6 +33,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.StartSitesBtn = new System.Windows.Forms.Button();
             this.StopSitesBtn = new System.Windows.Forms.Button();
+            this.RestartSitesBtn = new System.Windows.Forms.Button();
+            this.StartAppPoolBtn = new System.Windows.Forms.Button();
+            this.StopAppPoolBtn = new System.Windows.Forms.Button();
+            this.RecycleAppPoolBtn = new System.Windows.Forms.Button();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.siteStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,7 +48,7 @@
             this.siteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vDirDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.siteRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.RestartSitesBtn = new System.Windows.Forms.Button();
+            this.ChangeDirBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sitesGrid)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.siteRecordBindingSource)).BeginInit();
@@ -78,6 +82,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ChangeDirBtn);
+            this.panel1.Controls.Add(this.RecycleAppPoolBtn);
+            this.panel1.Controls.Add(this.StopAppPoolBtn);
+            this.panel1.Controls.Add(this.StartAppPoolBtn);
             this.panel1.Controls.Add(this.RestartSitesBtn);
             this.panel1.Controls.Add(this.StartSitesBtn);
             this.panel1.Controls.Add(this.StopSitesBtn);
@@ -106,6 +114,46 @@
             this.StopSitesBtn.Text = "Stop Sites";
             this.StopSitesBtn.UseVisualStyleBackColor = true;
             this.StopSitesBtn.Click += new System.EventHandler(this.StopSitesBtn_Click);
+            // 
+            // RestartSitesBtn
+            // 
+            this.RestartSitesBtn.Location = new System.Drawing.Point(36, 71);
+            this.RestartSitesBtn.Name = "RestartSitesBtn";
+            this.RestartSitesBtn.Size = new System.Drawing.Size(75, 23);
+            this.RestartSitesBtn.TabIndex = 3;
+            this.RestartSitesBtn.Text = "Restart Sites";
+            this.RestartSitesBtn.UseVisualStyleBackColor = true;
+            this.RestartSitesBtn.Click += new System.EventHandler(this.RestartSitesBtn_Click);
+            // 
+            // StartAppPoolBtn
+            // 
+            this.StartAppPoolBtn.Location = new System.Drawing.Point(26, 116);
+            this.StartAppPoolBtn.Name = "StartAppPoolBtn";
+            this.StartAppPoolBtn.Size = new System.Drawing.Size(97, 23);
+            this.StartAppPoolBtn.TabIndex = 4;
+            this.StartAppPoolBtn.Text = "Start AppPool";
+            this.StartAppPoolBtn.UseVisualStyleBackColor = true;
+            this.StartAppPoolBtn.Click += new System.EventHandler(this.StartAppPoolBtn_Click);
+            // 
+            // StopAppPoolBtn
+            // 
+            this.StopAppPoolBtn.Location = new System.Drawing.Point(26, 145);
+            this.StopAppPoolBtn.Name = "StopAppPoolBtn";
+            this.StopAppPoolBtn.Size = new System.Drawing.Size(97, 23);
+            this.StopAppPoolBtn.TabIndex = 5;
+            this.StopAppPoolBtn.Text = "Stop AppPool";
+            this.StopAppPoolBtn.UseVisualStyleBackColor = true;
+            this.StopAppPoolBtn.Click += new System.EventHandler(this.StopAppPoolBtn_Click);
+            // 
+            // RecycleAppPoolBtn
+            // 
+            this.RecycleAppPoolBtn.Location = new System.Drawing.Point(26, 174);
+            this.RecycleAppPoolBtn.Name = "RecycleAppPoolBtn";
+            this.RecycleAppPoolBtn.Size = new System.Drawing.Size(97, 23);
+            this.RecycleAppPoolBtn.TabIndex = 6;
+            this.RecycleAppPoolBtn.Text = "Recycle AppPool";
+            this.RecycleAppPoolBtn.UseVisualStyleBackColor = true;
+            this.RecycleAppPoolBtn.Click += new System.EventHandler(this.RecycleAppPoolBtn_Click);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -195,15 +243,15 @@
             // 
             this.siteRecordBindingSource.DataSource = typeof(IIsManage.SiteRecord);
             // 
-            // RestartSitesBtn
+            // ChangeDirBtn
             // 
-            this.RestartSitesBtn.Location = new System.Drawing.Point(36, 71);
-            this.RestartSitesBtn.Name = "RestartSitesBtn";
-            this.RestartSitesBtn.Size = new System.Drawing.Size(75, 23);
-            this.RestartSitesBtn.TabIndex = 3;
-            this.RestartSitesBtn.Text = "Restart Sites";
-            this.RestartSitesBtn.UseVisualStyleBackColor = true;
-            this.RestartSitesBtn.Click += new System.EventHandler(this.RestartSitesBtn_Click);
+            this.ChangeDirBtn.Location = new System.Drawing.Point(26, 256);
+            this.ChangeDirBtn.Name = "ChangeDirBtn";
+            this.ChangeDirBtn.Size = new System.Drawing.Size(99, 23);
+            this.ChangeDirBtn.TabIndex = 7;
+            this.ChangeDirBtn.Text = "Change Path";
+            this.ChangeDirBtn.UseVisualStyleBackColor = true;
+            this.ChangeDirBtn.Click += new System.EventHandler(this.ChangeDirBtn_Click);
             // 
             // Form1
             // 
@@ -240,6 +288,10 @@
         private System.Windows.Forms.Button StartSitesBtn;
         private System.Windows.Forms.Button StopSitesBtn;
         private System.Windows.Forms.Button RestartSitesBtn;
+        private System.Windows.Forms.Button RecycleAppPoolBtn;
+        private System.Windows.Forms.Button StopAppPoolBtn;
+        private System.Windows.Forms.Button StartAppPoolBtn;
+        private System.Windows.Forms.Button ChangeDirBtn;
     }
 }
 
