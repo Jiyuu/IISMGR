@@ -20,7 +20,8 @@ namespace IIsManage
             InitializeComponent();
         }
 
-        SortableBindingList<SiteRecord> siteRecords = new SortableBindingList<SiteRecord>();
+        List<SiteRecord> siteRecords = new List<SiteRecord>();
+        BindingListView<SiteRecord> siteRecordsView;
         private void Form1_Load(object sender, EventArgs e)
         {
             var sites = sm.Sites;
@@ -50,7 +51,10 @@ namespace IIsManage
                 siteRecords.Add(record);
             }
             sitesGrid.AutoGenerateColumns = false;
-            sitesGrid.DataSource = siteRecords;
+
+            siteRecordsView = new BindingListView<SiteRecord>(siteRecords);
+
+            sitesGrid.DataSource = siteRecordsView;
 
         }
 
@@ -58,14 +62,16 @@ namespace IIsManage
         {
             foreach (DataGridViewRow row in sitesGrid.SelectedRows)
             {
-                SiteRecord record = row.DataBoundItem as SiteRecord;
+                ObjectView<SiteRecord> ovo= row.DataBoundItem as ObjectView<SiteRecord>;
+                if (ovo==null)
+                    continue;
+                SiteRecord record = ovo.Object;
                 if (record != null)
                 {
                     record.Site.Start();
+                    ovo.BeginEdit();
                     record.SiteState = record.Site.State;
-
-                    siteRecords.ResetItem(siteRecords.IndexOf(record));
-
+                    ovo.EndEdit();
                 }
             }
 
@@ -75,14 +81,16 @@ namespace IIsManage
         {
             foreach (DataGridViewRow row in sitesGrid.SelectedRows)
             {
-                SiteRecord record = row.DataBoundItem as SiteRecord;
+                ObjectView<SiteRecord> ovo = row.DataBoundItem as ObjectView<SiteRecord>;
+                if (ovo == null)
+                    continue;
+                SiteRecord record = ovo.Object;
                 if (record != null)
                 {
                     record.Site.Stop();
+                    ovo.BeginEdit();
                     record.SiteState = record.Site.State;
-
-                    siteRecords.ResetItem(siteRecords.IndexOf(record));
-
+                    ovo.EndEdit();
                 }
             }
         }
@@ -91,15 +99,17 @@ namespace IIsManage
         {
             foreach (DataGridViewRow row in sitesGrid.SelectedRows)
             {
-                SiteRecord record = row.DataBoundItem as SiteRecord;
+                ObjectView<SiteRecord> ovo = row.DataBoundItem as ObjectView<SiteRecord>;
+                if (ovo == null)
+                    continue;
+                SiteRecord record = ovo.Object;
                 if (record != null)
                 {
                     record.Site.Stop();
                     record.Site.Start();
+                    ovo.BeginEdit();
                     record.SiteState = record.Site.State;
-
-                    siteRecords.ResetItem(siteRecords.IndexOf(record));
-
+                    ovo.EndEdit();
                 }
             }
         }
@@ -108,13 +118,16 @@ namespace IIsManage
         {
             foreach (DataGridViewRow row in sitesGrid.SelectedRows)
             {
-                SiteRecord record = row.DataBoundItem as SiteRecord;
+                ObjectView<SiteRecord> ovo = row.DataBoundItem as ObjectView<SiteRecord>;
+                if (ovo == null)
+                    continue;
+                SiteRecord record = ovo.Object;
                 if (record != null)
                 {
                     record.AppPool.Start();
+                    ovo.BeginEdit();
                     record.AppPoolState = record.AppPool.State;
-
-                    siteRecords.ResetItem(siteRecords.IndexOf(record));
+                    ovo.EndEdit();
                 }
             }
         }
@@ -123,13 +136,17 @@ namespace IIsManage
         {
             foreach (DataGridViewRow row in sitesGrid.SelectedRows)
             {
-                SiteRecord record = row.DataBoundItem as SiteRecord;
+                ObjectView<SiteRecord> ovo = row.DataBoundItem as ObjectView<SiteRecord>;
+                if (ovo == null)
+                    continue;
+                SiteRecord record = ovo.Object;
                 if (record != null)
                 {
-                    record.AppPool.Stop();
+                    if (record.AppPool.State == ObjectState.Started)
+                        record.AppPool.Stop();
+                    ovo.BeginEdit();
                     record.AppPoolState = record.AppPool.State;
-
-                    siteRecords.ResetItem(siteRecords.IndexOf(record));
+                    ovo.EndEdit();
                 }
             }
         }
@@ -138,14 +155,18 @@ namespace IIsManage
         {
             foreach (DataGridViewRow row in sitesGrid.SelectedRows)
             {
-                SiteRecord record = row.DataBoundItem as SiteRecord;
+                ObjectView<SiteRecord> ovo = row.DataBoundItem as ObjectView<SiteRecord>;
+                if (ovo == null)
+                    continue;
+                SiteRecord record = ovo.Object;
                 if (record != null)
                 {
-                    record.AppPool.Stop();
+                    if (record.AppPool.State == ObjectState.Started)
+                        record.AppPool.Stop();
                     record.AppPool.Start();
+                    ovo.BeginEdit();
                     record.AppPoolState = record.AppPool.State;
-
-                    siteRecords.ResetItem(siteRecords.IndexOf(record));
+                    ovo.EndEdit();
                 }
             }
         }
@@ -156,7 +177,10 @@ namespace IIsManage
             bool AllUsingSamePath = true;
             foreach (DataGridViewRow row in sitesGrid.SelectedRows)
             {
-                SiteRecord record = row.DataBoundItem as SiteRecord;
+                ObjectView<SiteRecord> ovo = row.DataBoundItem as ObjectView<SiteRecord>;
+                if (ovo == null)
+                    continue;
+                SiteRecord record = ovo.Object;
                 if (record != null)
                 {
                     if (selectedPath == null)
@@ -198,13 +222,16 @@ namespace IIsManage
 
                 foreach (DataGridViewRow row in sitesGrid.SelectedRows)
                 {
-                    SiteRecord record = row.DataBoundItem as SiteRecord;
+                    ObjectView<SiteRecord> ovo = row.DataBoundItem as ObjectView<SiteRecord>;
+                    if (ovo == null)
+                        continue;
+                    SiteRecord record = ovo.Object;
                     if (record != null)
                     {
                         record.VDir.PhysicalPath = selectedPath;
+                        ovo.BeginEdit();
                         record.Path = record.VDir.PhysicalPath;
-
-                        siteRecords.ResetItem(siteRecords.IndexOf(record));
+                        ovo.EndEdit();
                     }
                 }
             }
@@ -214,9 +241,7 @@ namespace IIsManage
 
         private void FilterTxt_TextChanged(object sender, EventArgs e)
         {
-            var tmp = siteRecords.Where(r => r.Name.Contains(FilterTxt.Text));
-
-            sitesGrid.DataSource = new SortableBindingList<SiteRecord>(siteRecords.Where(r => r.Name.Contains(FilterTxt.Text)));
+            siteRecordsView.ApplyFilter(record => record.Name.Contains(FilterTxt.Text) || record.Path.Contains(FilterTxt.Text));
         }
     }
 }
