@@ -52,5 +52,55 @@ namespace IIsManage
             sitesGrid.DataSource = siteRecords;
 
         }
+
+        private void StartSitesBtn_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in sitesGrid.SelectedRows)
+            {
+                SiteRecord record = row.DataBoundItem as SiteRecord;
+                if (record != null)
+                {
+                    record.Site.Start();
+                    record.SiteState = record.Site.State;
+
+                    siteRecords.ResetItem(siteRecords.IndexOf(record));
+
+                }
+            }
+            
+        }
+
+        private void StopSitesBtn_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in sitesGrid.SelectedRows)
+            {
+                SiteRecord record = row.DataBoundItem as SiteRecord;
+                if (record != null)
+                {
+                    record.Site.Stop();
+                    record.SiteState = record.Site.State;
+
+                    siteRecords.ResetItem(siteRecords.IndexOf(record));
+
+                }
+            }
+        }
+
+        private void RestartSitesBtn_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in sitesGrid.SelectedRows)
+            {
+                SiteRecord record = row.DataBoundItem as SiteRecord;
+                if (record != null)
+                {
+                    record.Site.Stop();
+                    record.Site.Start();
+                    record.SiteState = record.Site.State;
+
+                    siteRecords.ResetItem(siteRecords.IndexOf(record));
+
+                }
+            }
+        }
     }
 }

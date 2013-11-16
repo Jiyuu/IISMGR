@@ -31,7 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.sitesGrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.siteRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.StartSitesBtn = new System.Windows.Forms.Button();
+            this.StopSitesBtn = new System.Windows.Forms.Button();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.siteStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,7 +43,10 @@
             this.applicationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.siteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vDirDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.siteRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.RestartSitesBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sitesGrid)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.siteRecordBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,15 +78,34 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.RestartSitesBtn);
+            this.panel1.Controls.Add(this.StartSitesBtn);
+            this.panel1.Controls.Add(this.StopSitesBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(629, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(145, 479);
             this.panel1.TabIndex = 1;
             // 
-            // siteRecordBindingSource
+            // StartSitesBtn
             // 
-            this.siteRecordBindingSource.DataSource = typeof(IIsManage.SiteRecord);
+            this.StartSitesBtn.Location = new System.Drawing.Point(36, 12);
+            this.StartSitesBtn.Name = "StartSitesBtn";
+            this.StartSitesBtn.Size = new System.Drawing.Size(75, 23);
+            this.StartSitesBtn.TabIndex = 2;
+            this.StartSitesBtn.Text = "Start Sites";
+            this.StartSitesBtn.UseVisualStyleBackColor = true;
+            this.StartSitesBtn.Click += new System.EventHandler(this.StartSitesBtn_Click);
+            // 
+            // StopSitesBtn
+            // 
+            this.StopSitesBtn.Location = new System.Drawing.Point(36, 41);
+            this.StopSitesBtn.Name = "StopSitesBtn";
+            this.StopSitesBtn.Size = new System.Drawing.Size(75, 23);
+            this.StopSitesBtn.TabIndex = 0;
+            this.StopSitesBtn.Text = "Stop Sites";
+            this.StopSitesBtn.UseVisualStyleBackColor = true;
+            this.StopSitesBtn.Click += new System.EventHandler(this.StopSitesBtn_Click);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -168,6 +191,20 @@
             this.vDirDataGridViewTextBoxColumn.Visible = false;
             this.vDirDataGridViewTextBoxColumn.Width = 52;
             // 
+            // siteRecordBindingSource
+            // 
+            this.siteRecordBindingSource.DataSource = typeof(IIsManage.SiteRecord);
+            // 
+            // RestartSitesBtn
+            // 
+            this.RestartSitesBtn.Location = new System.Drawing.Point(36, 71);
+            this.RestartSitesBtn.Name = "RestartSitesBtn";
+            this.RestartSitesBtn.Size = new System.Drawing.Size(75, 23);
+            this.RestartSitesBtn.TabIndex = 3;
+            this.RestartSitesBtn.Text = "Restart Sites";
+            this.RestartSitesBtn.UseVisualStyleBackColor = true;
+            this.RestartSitesBtn.Click += new System.EventHandler(this.RestartSitesBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,6 +216,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sitesGrid)).EndInit();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.siteRecordBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -199,6 +237,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn applicationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn siteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vDirDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button StartSitesBtn;
+        private System.Windows.Forms.Button StopSitesBtn;
+        private System.Windows.Forms.Button RestartSitesBtn;
     }
 }
 
