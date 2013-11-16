@@ -28,22 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sitesGrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.sitesGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // sitesGrid
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(774, 479);
-            this.dataGridView1.TabIndex = 0;
+            this.sitesGrid.AllowUserToAddRows = false;
+            this.sitesGrid.AllowUserToDeleteRows = false;
+            this.sitesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sitesGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Name});
+            this.sitesGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sitesGrid.Location = new System.Drawing.Point(0, 0);
+            this.sitesGrid.Name = "sitesGrid";
+            this.sitesGrid.ReadOnly = true;
+            this.sitesGrid.Size = new System.Drawing.Size(629, 479);
+            this.sitesGrid.TabIndex = 0;
             // 
             // panel1
             // 
@@ -53,25 +56,31 @@
             this.panel1.Size = new System.Drawing.Size(145, 479);
             this.panel1.TabIndex = 1;
             // 
+            // Name
+            // 
+            this.Name.HeaderText = "Name";
+            this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(774, 479);
+            this.Controls.Add(this.sitesGrid);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sitesGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView sitesGrid;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
     }
 }
 
