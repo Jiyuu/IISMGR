@@ -64,7 +64,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SiteRecord.cs" />
-    <Compile Include="SortableBindingList.cs" />
     <EmbeddedResource Include="IISManagerFrm.resx">
       <DependentUpon>IISManagerFrm.cs</DependentUpon>
     </EmbeddedResource>
