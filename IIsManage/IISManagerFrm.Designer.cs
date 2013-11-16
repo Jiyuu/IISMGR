@@ -30,6 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.sitesGrid = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.ChangeDirBtn = new System.Windows.Forms.Button();
+            this.RecycleAppPoolBtn = new System.Windows.Forms.Button();
+            this.StopAppPoolBtn = new System.Windows.Forms.Button();
+            this.StartAppPoolBtn = new System.Windows.Forms.Button();
+            this.RestartSitesBtn = new System.Windows.Forms.Button();
+            this.StartSitesBtn = new System.Windows.Forms.Button();
+            this.StopSitesBtn = new System.Windows.Forms.Button();
+            this.FilterTxt = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.RefreshBtn = new System.Windows.Forms.Button();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.siteStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,20 +52,10 @@
             this.siteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vDirDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.siteRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.ChangeDirBtn = new System.Windows.Forms.Button();
-            this.RecycleAppPoolBtn = new System.Windows.Forms.Button();
-            this.StopAppPoolBtn = new System.Windows.Forms.Button();
-            this.StartAppPoolBtn = new System.Windows.Forms.Button();
-            this.RestartSitesBtn = new System.Windows.Forms.Button();
-            this.StartSitesBtn = new System.Windows.Forms.Button();
-            this.StopSitesBtn = new System.Windows.Forms.Button();
-            this.FilterTxt = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.sitesGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.siteRecordBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.siteRecordBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // sitesGrid
@@ -83,96 +84,9 @@
             this.sitesGrid.Size = new System.Drawing.Size(629, 459);
             this.sitesGrid.TabIndex = 0;
             // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Visible = false;
-            this.iDDataGridViewTextBoxColumn.Width = 43;
-            // 
-            // siteStateDataGridViewTextBoxColumn
-            // 
-            this.siteStateDataGridViewTextBoxColumn.DataPropertyName = "SiteState";
-            this.siteStateDataGridViewTextBoxColumn.HeaderText = "SiteState";
-            this.siteStateDataGridViewTextBoxColumn.Name = "siteStateDataGridViewTextBoxColumn";
-            this.siteStateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.siteStateDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // appPoolNameDataGridViewTextBoxColumn
-            // 
-            this.appPoolNameDataGridViewTextBoxColumn.DataPropertyName = "AppPoolName";
-            this.appPoolNameDataGridViewTextBoxColumn.HeaderText = "AppPoolName";
-            this.appPoolNameDataGridViewTextBoxColumn.Name = "appPoolNameDataGridViewTextBoxColumn";
-            this.appPoolNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // appPoolDataGridViewTextBoxColumn
-            // 
-            this.appPoolDataGridViewTextBoxColumn.DataPropertyName = "AppPool";
-            this.appPoolDataGridViewTextBoxColumn.HeaderText = "AppPool";
-            this.appPoolDataGridViewTextBoxColumn.Name = "appPoolDataGridViewTextBoxColumn";
-            this.appPoolDataGridViewTextBoxColumn.ReadOnly = true;
-            this.appPoolDataGridViewTextBoxColumn.Visible = false;
-            this.appPoolDataGridViewTextBoxColumn.Width = 72;
-            // 
-            // appPoolStateDataGridViewTextBoxColumn
-            // 
-            this.appPoolStateDataGridViewTextBoxColumn.DataPropertyName = "AppPoolState";
-            this.appPoolStateDataGridViewTextBoxColumn.HeaderText = "AppPoolState";
-            this.appPoolStateDataGridViewTextBoxColumn.Name = "appPoolStateDataGridViewTextBoxColumn";
-            this.appPoolStateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.appPoolStateDataGridViewTextBoxColumn.Width = 97;
-            // 
-            // pathDataGridViewTextBoxColumn
-            // 
-            this.pathDataGridViewTextBoxColumn.DataPropertyName = "Path";
-            this.pathDataGridViewTextBoxColumn.HeaderText = "Path";
-            this.pathDataGridViewTextBoxColumn.Name = "pathDataGridViewTextBoxColumn";
-            this.pathDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pathDataGridViewTextBoxColumn.Width = 54;
-            // 
-            // applicationDataGridViewTextBoxColumn
-            // 
-            this.applicationDataGridViewTextBoxColumn.DataPropertyName = "Application";
-            this.applicationDataGridViewTextBoxColumn.HeaderText = "Application";
-            this.applicationDataGridViewTextBoxColumn.Name = "applicationDataGridViewTextBoxColumn";
-            this.applicationDataGridViewTextBoxColumn.ReadOnly = true;
-            this.applicationDataGridViewTextBoxColumn.Visible = false;
-            this.applicationDataGridViewTextBoxColumn.Width = 84;
-            // 
-            // siteDataGridViewTextBoxColumn
-            // 
-            this.siteDataGridViewTextBoxColumn.DataPropertyName = "Site";
-            this.siteDataGridViewTextBoxColumn.HeaderText = "Site";
-            this.siteDataGridViewTextBoxColumn.Name = "siteDataGridViewTextBoxColumn";
-            this.siteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.siteDataGridViewTextBoxColumn.Visible = false;
-            this.siteDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // vDirDataGridViewTextBoxColumn
-            // 
-            this.vDirDataGridViewTextBoxColumn.DataPropertyName = "VDir";
-            this.vDirDataGridViewTextBoxColumn.HeaderText = "VDir";
-            this.vDirDataGridViewTextBoxColumn.Name = "vDirDataGridViewTextBoxColumn";
-            this.vDirDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vDirDataGridViewTextBoxColumn.Visible = false;
-            this.vDirDataGridViewTextBoxColumn.Width = 52;
-            // 
-            // siteRecordBindingSource
-            // 
-            this.siteRecordBindingSource.DataSource = typeof(IIsManage.SiteRecord);
-            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.RefreshBtn);
             this.panel1.Controls.Add(this.ChangeDirBtn);
             this.panel1.Controls.Add(this.RecycleAppPoolBtn);
             this.panel1.Controls.Add(this.StopAppPoolBtn);
@@ -275,6 +189,104 @@
             this.panel2.Size = new System.Drawing.Size(629, 20);
             this.panel2.TabIndex = 2;
             // 
+            // RefreshBtn
+            // 
+            this.RefreshBtn.Location = new System.Drawing.Point(36, 332);
+            this.RefreshBtn.Name = "RefreshBtn";
+            this.RefreshBtn.Size = new System.Drawing.Size(75, 23);
+            this.RefreshBtn.TabIndex = 8;
+            this.RefreshBtn.Text = "Refresh";
+            this.RefreshBtn.UseVisualStyleBackColor = true;
+            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Visible = false;
+            this.iDDataGridViewTextBoxColumn.Width = 43;
+            // 
+            // siteStateDataGridViewTextBoxColumn
+            // 
+            this.siteStateDataGridViewTextBoxColumn.DataPropertyName = "SiteState";
+            this.siteStateDataGridViewTextBoxColumn.HeaderText = "SiteState";
+            this.siteStateDataGridViewTextBoxColumn.Name = "siteStateDataGridViewTextBoxColumn";
+            this.siteStateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.siteStateDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // appPoolNameDataGridViewTextBoxColumn
+            // 
+            this.appPoolNameDataGridViewTextBoxColumn.DataPropertyName = "AppPoolName";
+            this.appPoolNameDataGridViewTextBoxColumn.HeaderText = "AppPoolName";
+            this.appPoolNameDataGridViewTextBoxColumn.Name = "appPoolNameDataGridViewTextBoxColumn";
+            this.appPoolNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // appPoolDataGridViewTextBoxColumn
+            // 
+            this.appPoolDataGridViewTextBoxColumn.DataPropertyName = "AppPool";
+            this.appPoolDataGridViewTextBoxColumn.HeaderText = "AppPool";
+            this.appPoolDataGridViewTextBoxColumn.Name = "appPoolDataGridViewTextBoxColumn";
+            this.appPoolDataGridViewTextBoxColumn.ReadOnly = true;
+            this.appPoolDataGridViewTextBoxColumn.Visible = false;
+            this.appPoolDataGridViewTextBoxColumn.Width = 72;
+            // 
+            // appPoolStateDataGridViewTextBoxColumn
+            // 
+            this.appPoolStateDataGridViewTextBoxColumn.DataPropertyName = "AppPoolState";
+            this.appPoolStateDataGridViewTextBoxColumn.HeaderText = "AppPoolState";
+            this.appPoolStateDataGridViewTextBoxColumn.Name = "appPoolStateDataGridViewTextBoxColumn";
+            this.appPoolStateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.appPoolStateDataGridViewTextBoxColumn.Width = 97;
+            // 
+            // pathDataGridViewTextBoxColumn
+            // 
+            this.pathDataGridViewTextBoxColumn.DataPropertyName = "Path";
+            this.pathDataGridViewTextBoxColumn.HeaderText = "Path";
+            this.pathDataGridViewTextBoxColumn.Name = "pathDataGridViewTextBoxColumn";
+            this.pathDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pathDataGridViewTextBoxColumn.Width = 54;
+            // 
+            // applicationDataGridViewTextBoxColumn
+            // 
+            this.applicationDataGridViewTextBoxColumn.DataPropertyName = "Application";
+            this.applicationDataGridViewTextBoxColumn.HeaderText = "Application";
+            this.applicationDataGridViewTextBoxColumn.Name = "applicationDataGridViewTextBoxColumn";
+            this.applicationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.applicationDataGridViewTextBoxColumn.Visible = false;
+            this.applicationDataGridViewTextBoxColumn.Width = 84;
+            // 
+            // siteDataGridViewTextBoxColumn
+            // 
+            this.siteDataGridViewTextBoxColumn.DataPropertyName = "Site";
+            this.siteDataGridViewTextBoxColumn.HeaderText = "Site";
+            this.siteDataGridViewTextBoxColumn.Name = "siteDataGridViewTextBoxColumn";
+            this.siteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.siteDataGridViewTextBoxColumn.Visible = false;
+            this.siteDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // vDirDataGridViewTextBoxColumn
+            // 
+            this.vDirDataGridViewTextBoxColumn.DataPropertyName = "VDir";
+            this.vDirDataGridViewTextBoxColumn.HeaderText = "VDir";
+            this.vDirDataGridViewTextBoxColumn.Name = "vDirDataGridViewTextBoxColumn";
+            this.vDirDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vDirDataGridViewTextBoxColumn.Visible = false;
+            this.vDirDataGridViewTextBoxColumn.Width = 52;
+            // 
+            // siteRecordBindingSource
+            // 
+            this.siteRecordBindingSource.DataSource = typeof(IIsManage.SiteRecord);
+            // 
             // IISManagerFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,10 +299,10 @@
             this.Text = "IIS Manager";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sitesGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.siteRecordBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.siteRecordBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -319,6 +331,7 @@
         private System.Windows.Forms.Button ChangeDirBtn;
         private System.Windows.Forms.TextBox FilterTxt;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button RefreshBtn;
     }
 }
 

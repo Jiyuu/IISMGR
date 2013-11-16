@@ -27,5 +27,15 @@ namespace IIsManage
         public Microsoft.Web.Administration.Site Site { get; set; }
 
         public Microsoft.Web.Administration.VirtualDirectory VDir { get; set; }
+
+        public void Populate()
+        {
+            Name = Site.Name;
+            ID = Site.Id;
+            SiteState = Site.State;
+            AppPoolName = Application.ApplicationPoolName;
+            AppPoolState = AppPool.State;
+            Path = VDir.PhysicalPath;
+        }
     }
 }

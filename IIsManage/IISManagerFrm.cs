@@ -38,7 +38,6 @@ namespace IIsManage
                 }
                 record.Site = site;
                 record.Application = application;
-
                 record.Name = site.Name;
                 record.ID = site.Id;
                 record.SiteState = site.State;
@@ -47,7 +46,7 @@ namespace IIsManage
                 record.AppPoolState = pool.State;
                 record.Path = application.VirtualDirectories[0].PhysicalPath;
                 record.VDir = application.VirtualDirectories[0];
-
+                record.Populate();
                 siteRecords.Add(record);
             }
             sitesGrid.AutoGenerateColumns = false;
@@ -242,6 +241,22 @@ namespace IIsManage
         private void FilterTxt_TextChanged(object sender, EventArgs e)
         {
             siteRecordsView.ApplyFilter(record => record.Name.Contains(FilterTxt.Text) || record.Path.Contains(FilterTxt.Text));
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            foreach (var record in siteRecords)
+            {
+                record.Populate();
+            }
+
+            foreach (ObjectView<SiteRecord> recV in siteRecordsView)
+            {
+                recV.BeginEdit();
+                recV.Object.Populate();
+                recV.EndEdit();
+            }
+
         }
     }
 }
