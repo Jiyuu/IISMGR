@@ -28,19 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.sitesGrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.siteRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.siteStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.appPoolNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.appPoolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.appPoolStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.applicationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.siteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vDirDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.sitesGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siteRecordBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // sitesGrid
             // 
             this.sitesGrid.AllowUserToAddRows = false;
             this.sitesGrid.AllowUserToDeleteRows = false;
+            this.sitesGrid.AutoGenerateColumns = false;
+            this.sitesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.sitesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sitesGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Name});
+            this.nameDataGridViewTextBoxColumn,
+            this.iDDataGridViewTextBoxColumn,
+            this.siteStateDataGridViewTextBoxColumn,
+            this.appPoolNameDataGridViewTextBoxColumn,
+            this.appPoolDataGridViewTextBoxColumn,
+            this.appPoolStateDataGridViewTextBoxColumn,
+            this.pathDataGridViewTextBoxColumn,
+            this.applicationDataGridViewTextBoxColumn,
+            this.siteDataGridViewTextBoxColumn,
+            this.vDirDataGridViewTextBoxColumn});
+            this.sitesGrid.DataSource = this.siteRecordBindingSource;
             this.sitesGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sitesGrid.Location = new System.Drawing.Point(0, 0);
             this.sitesGrid.Name = "sitesGrid";
@@ -56,11 +80,93 @@
             this.panel1.Size = new System.Drawing.Size(145, 479);
             this.panel1.TabIndex = 1;
             // 
-            // Name
+            // siteRecordBindingSource
             // 
-            this.Name.HeaderText = "Name";
-            this.Name.Name = "Name";
-            this.Name.ReadOnly = true;
+            this.siteRecordBindingSource.DataSource = typeof(IIsManage.SiteRecord);
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Visible = false;
+            this.iDDataGridViewTextBoxColumn.Width = 43;
+            // 
+            // siteStateDataGridViewTextBoxColumn
+            // 
+            this.siteStateDataGridViewTextBoxColumn.DataPropertyName = "SiteState";
+            this.siteStateDataGridViewTextBoxColumn.HeaderText = "SiteState";
+            this.siteStateDataGridViewTextBoxColumn.Name = "siteStateDataGridViewTextBoxColumn";
+            this.siteStateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.siteStateDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // appPoolNameDataGridViewTextBoxColumn
+            // 
+            this.appPoolNameDataGridViewTextBoxColumn.DataPropertyName = "AppPoolName";
+            this.appPoolNameDataGridViewTextBoxColumn.HeaderText = "AppPoolName";
+            this.appPoolNameDataGridViewTextBoxColumn.Name = "appPoolNameDataGridViewTextBoxColumn";
+            this.appPoolNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // appPoolDataGridViewTextBoxColumn
+            // 
+            this.appPoolDataGridViewTextBoxColumn.DataPropertyName = "AppPool";
+            this.appPoolDataGridViewTextBoxColumn.HeaderText = "AppPool";
+            this.appPoolDataGridViewTextBoxColumn.Name = "appPoolDataGridViewTextBoxColumn";
+            this.appPoolDataGridViewTextBoxColumn.ReadOnly = true;
+            this.appPoolDataGridViewTextBoxColumn.Visible = false;
+            this.appPoolDataGridViewTextBoxColumn.Width = 72;
+            // 
+            // appPoolStateDataGridViewTextBoxColumn
+            // 
+            this.appPoolStateDataGridViewTextBoxColumn.DataPropertyName = "AppPoolState";
+            this.appPoolStateDataGridViewTextBoxColumn.HeaderText = "AppPoolState";
+            this.appPoolStateDataGridViewTextBoxColumn.Name = "appPoolStateDataGridViewTextBoxColumn";
+            this.appPoolStateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.appPoolStateDataGridViewTextBoxColumn.Width = 97;
+            // 
+            // pathDataGridViewTextBoxColumn
+            // 
+            this.pathDataGridViewTextBoxColumn.DataPropertyName = "Path";
+            this.pathDataGridViewTextBoxColumn.HeaderText = "Path";
+            this.pathDataGridViewTextBoxColumn.Name = "pathDataGridViewTextBoxColumn";
+            this.pathDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pathDataGridViewTextBoxColumn.Width = 54;
+            // 
+            // applicationDataGridViewTextBoxColumn
+            // 
+            this.applicationDataGridViewTextBoxColumn.DataPropertyName = "Application";
+            this.applicationDataGridViewTextBoxColumn.HeaderText = "Application";
+            this.applicationDataGridViewTextBoxColumn.Name = "applicationDataGridViewTextBoxColumn";
+            this.applicationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.applicationDataGridViewTextBoxColumn.Visible = false;
+            this.applicationDataGridViewTextBoxColumn.Width = 84;
+            // 
+            // siteDataGridViewTextBoxColumn
+            // 
+            this.siteDataGridViewTextBoxColumn.DataPropertyName = "Site";
+            this.siteDataGridViewTextBoxColumn.HeaderText = "Site";
+            this.siteDataGridViewTextBoxColumn.Name = "siteDataGridViewTextBoxColumn";
+            this.siteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.siteDataGridViewTextBoxColumn.Visible = false;
+            this.siteDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // vDirDataGridViewTextBoxColumn
+            // 
+            this.vDirDataGridViewTextBoxColumn.DataPropertyName = "VDir";
+            this.vDirDataGridViewTextBoxColumn.HeaderText = "VDir";
+            this.vDirDataGridViewTextBoxColumn.Name = "vDirDataGridViewTextBoxColumn";
+            this.vDirDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vDirDataGridViewTextBoxColumn.Visible = false;
+            this.vDirDataGridViewTextBoxColumn.Width = 52;
             // 
             // Form1
             // 
@@ -69,9 +175,11 @@
             this.ClientSize = new System.Drawing.Size(774, 479);
             this.Controls.Add(this.sitesGrid);
             this.Controls.Add(this.panel1);
+            this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sitesGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siteRecordBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -80,7 +188,17 @@
 
         private System.Windows.Forms.DataGridView sitesGrid;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.BindingSource siteRecordBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn siteStateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn appPoolNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn appPoolDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn appPoolStateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pathDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn applicationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn siteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vDirDataGridViewTextBoxColumn;
     }
 }
 

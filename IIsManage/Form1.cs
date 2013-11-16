@@ -19,7 +19,7 @@ namespace IIsManage
             InitializeComponent();
         }
 
-        List<SiteRecord> siteRecords = new List<SiteRecord>();
+        SortableBindingList<SiteRecord> siteRecords = new SortableBindingList<SiteRecord>();
         private void Form1_Load(object sender, EventArgs e)
         {
             var sites = sm.Sites;
