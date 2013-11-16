@@ -20,41 +20,11 @@ namespace IIsManage
             InitializeComponent();
         }
 
-        List<SiteRecord> siteRecords = new List<SiteRecord>();
+        List<SiteRecord> siteRecords ;
         BindingListView<SiteRecord> siteRecordsView;
         private void Form1_Load(object sender, EventArgs e)
         {
-            var sites = sm.Sites;
-            var appPools = sm.ApplicationPools;
-            foreach (var site in sm.Sites)
-            {
-                var record = new SiteRecord();
-                var pool = appPools.SingleOrDefault(a => a.Name == site.Applications[0].ApplicationPoolName);
-                var application = site.Applications[0];
-                if (pool == null)
-                {
-                    System.Diagnostics.Trace.WriteLine(string.Format("no app pool for site {0}", site.Name));
-                    continue;
-                }
-                record.Site = site;
-                record.Application = application;
-                record.Name = site.Name;
-                record.ID = site.Id;
-                record.SiteState = site.State;
-                record.AppPoolName = application.ApplicationPoolName;
-                record.AppPool = pool;
-                record.AppPoolState = pool.State;
-                record.Path = application.VirtualDirectories[0].PhysicalPath;
-                record.VDir = application.VirtualDirectories[0];
-                record.Populate();
-                siteRecords.Add(record);
-            }
-            sitesGrid.AutoGenerateColumns = false;
-
-            siteRecordsView = new BindingListView<SiteRecord>(siteRecords);
-
-            sitesGrid.DataSource = siteRecordsView;
-
+            RefreshData();
         }
 
         private void StartSitesBtn_Click(object sender, EventArgs e)
@@ -240,7 +210,7 @@ namespace IIsManage
 
         private void FilterTxt_TextChanged(object sender, EventArgs e)
         {
-            siteRecordsView.ApplyFilter(record => record.Name.Contains(FilterTxt.Text) || record.Path.Contains(FilterTxt.Text));
+            ApplyFilter();
         }
 
         private void RefreshBtn_Click(object sender, EventArgs e)
@@ -257,6 +227,56 @@ namespace IIsManage
                 recV.EndEdit();
             }
 
+        }
+
+        private void HardRefreshBtn_Click(object sender, EventArgs e)
+        {
+            RefreshData();
+            ApplyFilter();
+        }
+        private void RefreshData()
+        {
+            var sites = sm.Sites;
+            var appPools = sm.ApplicationPools;
+            var tmpList = new List<SiteRecord>();
+            BindingListView<SiteRecord> tmpView;
+
+            foreach (var site in sm.Sites)
+            {
+                var record = new SiteRecord();
+                var pool = appPools.SingleOrDefault(a => a.Name == site.Applications[0].ApplicationPoolName);
+                var application = site.Applications[0];
+                if (pool == null)
+                {
+                    System.Diagnostics.Trace.WriteLine(string.Format("no app pool for site {0}", site.Name));
+                    continue;
+                }
+                record.Site = site;
+                record.Application = application;
+                record.Name = site.Name;
+                record.ID = site.Id;
+                record.SiteState = site.State;
+                record.AppPoolName = application.ApplicationPoolName;
+                record.AppPool = pool;
+                record.AppPoolState = pool.State;
+                record.Path = application.VirtualDirectories[0].PhysicalPath;
+                record.VDir = application.VirtualDirectories[0];
+                record.Populate();
+                tmpList.Add(record);
+            }
+            sitesGrid.AutoGenerateColumns = false;
+
+            tmpView = new BindingListView<SiteRecord>(tmpList);
+
+            siteRecords = tmpList;
+            siteRecordsView = tmpView;
+
+            sitesGrid.DataSource = siteRecordsView;
+        }
+
+        private void ApplyFilter()
+        {
+            siteRecordsView.ApplyFilter(record => record.Name.Contains(FilterTxt.Text) || record.Path.Contains(FilterTxt.Text));
         }
     }
 }

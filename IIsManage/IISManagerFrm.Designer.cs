@@ -52,6 +52,7 @@
             this.siteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vDirDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.siteRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.HardRefreshBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sitesGrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -86,6 +87,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.HardRefreshBtn);
             this.panel1.Controls.Add(this.RefreshBtn);
             this.panel1.Controls.Add(this.ChangeDirBtn);
             this.panel1.Controls.Add(this.RecycleAppPoolBtn);
@@ -287,6 +289,16 @@
             // 
             this.siteRecordBindingSource.DataSource = typeof(IIsManage.SiteRecord);
             // 
+            // HardRefreshBtn
+            // 
+            this.HardRefreshBtn.Location = new System.Drawing.Point(26, 372);
+            this.HardRefreshBtn.Name = "HardRefreshBtn";
+            this.HardRefreshBtn.Size = new System.Drawing.Size(97, 23);
+            this.HardRefreshBtn.TabIndex = 9;
+            this.HardRefreshBtn.Text = "Hard Refresh";
+            this.HardRefreshBtn.UseVisualStyleBackColor = true;
+            this.HardRefreshBtn.Click += new System.EventHandler(this.HardRefreshBtn_Click);
+            // 
             // IISManagerFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,6 +344,7 @@
         private System.Windows.Forms.TextBox FilterTxt;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button RefreshBtn;
+        private System.Windows.Forms.Button HardRefreshBtn;
     }
 }
 
