@@ -1,6 +1,6 @@
 ﻿namespace IIsManage
 {
-    partial class Form1
+    partial class IISManagerFrm
     {
         /// <summary>
         /// Required designer variable.
@@ -37,6 +37,7 @@
             this.StartAppPoolBtn = new System.Windows.Forms.Button();
             this.StopAppPoolBtn = new System.Windows.Forms.Button();
             this.RecycleAppPoolBtn = new System.Windows.Forms.Button();
+            this.ChangeDirBtn = new System.Windows.Forms.Button();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.siteStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +49,6 @@
             this.siteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vDirDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.siteRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ChangeDirBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sitesGrid)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.siteRecordBindingSource)).BeginInit();
@@ -155,6 +155,16 @@
             this.RecycleAppPoolBtn.UseVisualStyleBackColor = true;
             this.RecycleAppPoolBtn.Click += new System.EventHandler(this.RecycleAppPoolBtn_Click);
             // 
+            // ChangeDirBtn
+            // 
+            this.ChangeDirBtn.Location = new System.Drawing.Point(26, 256);
+            this.ChangeDirBtn.Name = "ChangeDirBtn";
+            this.ChangeDirBtn.Size = new System.Drawing.Size(99, 23);
+            this.ChangeDirBtn.TabIndex = 7;
+            this.ChangeDirBtn.Text = "Change Path";
+            this.ChangeDirBtn.UseVisualStyleBackColor = true;
+            this.ChangeDirBtn.Click += new System.EventHandler(this.ChangeDirBtn_Click);
+            // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
@@ -243,25 +253,15 @@
             // 
             this.siteRecordBindingSource.DataSource = typeof(IIsManage.SiteRecord);
             // 
-            // ChangeDirBtn
-            // 
-            this.ChangeDirBtn.Location = new System.Drawing.Point(26, 256);
-            this.ChangeDirBtn.Name = "ChangeDirBtn";
-            this.ChangeDirBtn.Size = new System.Drawing.Size(99, 23);
-            this.ChangeDirBtn.TabIndex = 7;
-            this.ChangeDirBtn.Text = "Change Path";
-            this.ChangeDirBtn.UseVisualStyleBackColor = true;
-            this.ChangeDirBtn.Click += new System.EventHandler(this.ChangeDirBtn_Click);
-            // 
-            // Form1
+            // IISManagerFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(774, 479);
             this.Controls.Add(this.sitesGrid);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "IISManagerFrm";
+            this.Text = "IIS Manager";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sitesGrid)).EndInit();
             this.panel1.ResumeLayout(false);

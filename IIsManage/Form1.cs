@@ -11,10 +11,10 @@ using Microsoft.Web.Administration;
 
 namespace IIsManage
 {
-    public partial class Form1 : Form
+    public partial class IISManagerFrm : Form
     {
         Microsoft.Web.Administration.ServerManager sm = new ServerManager();
-        public Form1()
+        public IISManagerFrm()
         {
             InitializeComponent();
         }
