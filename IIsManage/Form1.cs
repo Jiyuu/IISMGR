@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Web.Administration;
+using Equin.ApplicationFramework;
 
 namespace IIsManage
 {
@@ -209,6 +210,13 @@ namespace IIsManage
             }
 
 
+        }
+
+        private void FilterTxt_TextChanged(object sender, EventArgs e)
+        {
+            var tmp = siteRecords.Where(r => r.Name.Contains(FilterTxt.Text));
+
+            sitesGrid.DataSource = new SortableBindingList<SiteRecord>(siteRecords.Where(r => r.Name.Contains(FilterTxt.Text)));
         }
     }
 }

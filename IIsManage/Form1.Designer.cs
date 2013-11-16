@@ -30,14 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.sitesGrid = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.StartSitesBtn = new System.Windows.Forms.Button();
-            this.StopSitesBtn = new System.Windows.Forms.Button();
-            this.RestartSitesBtn = new System.Windows.Forms.Button();
-            this.StartAppPoolBtn = new System.Windows.Forms.Button();
-            this.StopAppPoolBtn = new System.Windows.Forms.Button();
-            this.RecycleAppPoolBtn = new System.Windows.Forms.Button();
-            this.ChangeDirBtn = new System.Windows.Forms.Button();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.siteStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,9 +41,20 @@
             this.siteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vDirDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.siteRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.ChangeDirBtn = new System.Windows.Forms.Button();
+            this.RecycleAppPoolBtn = new System.Windows.Forms.Button();
+            this.StopAppPoolBtn = new System.Windows.Forms.Button();
+            this.StartAppPoolBtn = new System.Windows.Forms.Button();
+            this.RestartSitesBtn = new System.Windows.Forms.Button();
+            this.StartSitesBtn = new System.Windows.Forms.Button();
+            this.StopSitesBtn = new System.Windows.Forms.Button();
+            this.FilterTxt = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.sitesGrid)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.siteRecordBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // sitesGrid
@@ -74,96 +77,11 @@
             this.vDirDataGridViewTextBoxColumn});
             this.sitesGrid.DataSource = this.siteRecordBindingSource;
             this.sitesGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sitesGrid.Location = new System.Drawing.Point(0, 0);
+            this.sitesGrid.Location = new System.Drawing.Point(0, 20);
             this.sitesGrid.Name = "sitesGrid";
             this.sitesGrid.ReadOnly = true;
-            this.sitesGrid.Size = new System.Drawing.Size(629, 479);
+            this.sitesGrid.Size = new System.Drawing.Size(629, 459);
             this.sitesGrid.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.ChangeDirBtn);
-            this.panel1.Controls.Add(this.RecycleAppPoolBtn);
-            this.panel1.Controls.Add(this.StopAppPoolBtn);
-            this.panel1.Controls.Add(this.StartAppPoolBtn);
-            this.panel1.Controls.Add(this.RestartSitesBtn);
-            this.panel1.Controls.Add(this.StartSitesBtn);
-            this.panel1.Controls.Add(this.StopSitesBtn);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(629, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(145, 479);
-            this.panel1.TabIndex = 1;
-            // 
-            // StartSitesBtn
-            // 
-            this.StartSitesBtn.Location = new System.Drawing.Point(36, 12);
-            this.StartSitesBtn.Name = "StartSitesBtn";
-            this.StartSitesBtn.Size = new System.Drawing.Size(75, 23);
-            this.StartSitesBtn.TabIndex = 2;
-            this.StartSitesBtn.Text = "Start Sites";
-            this.StartSitesBtn.UseVisualStyleBackColor = true;
-            this.StartSitesBtn.Click += new System.EventHandler(this.StartSitesBtn_Click);
-            // 
-            // StopSitesBtn
-            // 
-            this.StopSitesBtn.Location = new System.Drawing.Point(36, 41);
-            this.StopSitesBtn.Name = "StopSitesBtn";
-            this.StopSitesBtn.Size = new System.Drawing.Size(75, 23);
-            this.StopSitesBtn.TabIndex = 0;
-            this.StopSitesBtn.Text = "Stop Sites";
-            this.StopSitesBtn.UseVisualStyleBackColor = true;
-            this.StopSitesBtn.Click += new System.EventHandler(this.StopSitesBtn_Click);
-            // 
-            // RestartSitesBtn
-            // 
-            this.RestartSitesBtn.Location = new System.Drawing.Point(36, 71);
-            this.RestartSitesBtn.Name = "RestartSitesBtn";
-            this.RestartSitesBtn.Size = new System.Drawing.Size(75, 23);
-            this.RestartSitesBtn.TabIndex = 3;
-            this.RestartSitesBtn.Text = "Restart Sites";
-            this.RestartSitesBtn.UseVisualStyleBackColor = true;
-            this.RestartSitesBtn.Click += new System.EventHandler(this.RestartSitesBtn_Click);
-            // 
-            // StartAppPoolBtn
-            // 
-            this.StartAppPoolBtn.Location = new System.Drawing.Point(26, 116);
-            this.StartAppPoolBtn.Name = "StartAppPoolBtn";
-            this.StartAppPoolBtn.Size = new System.Drawing.Size(97, 23);
-            this.StartAppPoolBtn.TabIndex = 4;
-            this.StartAppPoolBtn.Text = "Start AppPool";
-            this.StartAppPoolBtn.UseVisualStyleBackColor = true;
-            this.StartAppPoolBtn.Click += new System.EventHandler(this.StartAppPoolBtn_Click);
-            // 
-            // StopAppPoolBtn
-            // 
-            this.StopAppPoolBtn.Location = new System.Drawing.Point(26, 145);
-            this.StopAppPoolBtn.Name = "StopAppPoolBtn";
-            this.StopAppPoolBtn.Size = new System.Drawing.Size(97, 23);
-            this.StopAppPoolBtn.TabIndex = 5;
-            this.StopAppPoolBtn.Text = "Stop AppPool";
-            this.StopAppPoolBtn.UseVisualStyleBackColor = true;
-            this.StopAppPoolBtn.Click += new System.EventHandler(this.StopAppPoolBtn_Click);
-            // 
-            // RecycleAppPoolBtn
-            // 
-            this.RecycleAppPoolBtn.Location = new System.Drawing.Point(26, 174);
-            this.RecycleAppPoolBtn.Name = "RecycleAppPoolBtn";
-            this.RecycleAppPoolBtn.Size = new System.Drawing.Size(97, 23);
-            this.RecycleAppPoolBtn.TabIndex = 6;
-            this.RecycleAppPoolBtn.Text = "Recycle AppPool";
-            this.RecycleAppPoolBtn.UseVisualStyleBackColor = true;
-            this.RecycleAppPoolBtn.Click += new System.EventHandler(this.RecycleAppPoolBtn_Click);
-            // 
-            // ChangeDirBtn
-            // 
-            this.ChangeDirBtn.Location = new System.Drawing.Point(26, 256);
-            this.ChangeDirBtn.Name = "ChangeDirBtn";
-            this.ChangeDirBtn.Size = new System.Drawing.Size(99, 23);
-            this.ChangeDirBtn.TabIndex = 7;
-            this.ChangeDirBtn.Text = "Change Path";
-            this.ChangeDirBtn.UseVisualStyleBackColor = true;
-            this.ChangeDirBtn.Click += new System.EventHandler(this.ChangeDirBtn_Click);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -253,19 +171,126 @@
             // 
             this.siteRecordBindingSource.DataSource = typeof(IIsManage.SiteRecord);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.ChangeDirBtn);
+            this.panel1.Controls.Add(this.RecycleAppPoolBtn);
+            this.panel1.Controls.Add(this.StopAppPoolBtn);
+            this.panel1.Controls.Add(this.StartAppPoolBtn);
+            this.panel1.Controls.Add(this.RestartSitesBtn);
+            this.panel1.Controls.Add(this.StartSitesBtn);
+            this.panel1.Controls.Add(this.StopSitesBtn);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(629, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(145, 479);
+            this.panel1.TabIndex = 1;
+            // 
+            // ChangeDirBtn
+            // 
+            this.ChangeDirBtn.Location = new System.Drawing.Point(26, 256);
+            this.ChangeDirBtn.Name = "ChangeDirBtn";
+            this.ChangeDirBtn.Size = new System.Drawing.Size(99, 23);
+            this.ChangeDirBtn.TabIndex = 7;
+            this.ChangeDirBtn.Text = "Change Path";
+            this.ChangeDirBtn.UseVisualStyleBackColor = true;
+            this.ChangeDirBtn.Click += new System.EventHandler(this.ChangeDirBtn_Click);
+            // 
+            // RecycleAppPoolBtn
+            // 
+            this.RecycleAppPoolBtn.Location = new System.Drawing.Point(26, 174);
+            this.RecycleAppPoolBtn.Name = "RecycleAppPoolBtn";
+            this.RecycleAppPoolBtn.Size = new System.Drawing.Size(97, 23);
+            this.RecycleAppPoolBtn.TabIndex = 6;
+            this.RecycleAppPoolBtn.Text = "Recycle AppPool";
+            this.RecycleAppPoolBtn.UseVisualStyleBackColor = true;
+            this.RecycleAppPoolBtn.Click += new System.EventHandler(this.RecycleAppPoolBtn_Click);
+            // 
+            // StopAppPoolBtn
+            // 
+            this.StopAppPoolBtn.Location = new System.Drawing.Point(26, 145);
+            this.StopAppPoolBtn.Name = "StopAppPoolBtn";
+            this.StopAppPoolBtn.Size = new System.Drawing.Size(97, 23);
+            this.StopAppPoolBtn.TabIndex = 5;
+            this.StopAppPoolBtn.Text = "Stop AppPool";
+            this.StopAppPoolBtn.UseVisualStyleBackColor = true;
+            this.StopAppPoolBtn.Click += new System.EventHandler(this.StopAppPoolBtn_Click);
+            // 
+            // StartAppPoolBtn
+            // 
+            this.StartAppPoolBtn.Location = new System.Drawing.Point(26, 116);
+            this.StartAppPoolBtn.Name = "StartAppPoolBtn";
+            this.StartAppPoolBtn.Size = new System.Drawing.Size(97, 23);
+            this.StartAppPoolBtn.TabIndex = 4;
+            this.StartAppPoolBtn.Text = "Start AppPool";
+            this.StartAppPoolBtn.UseVisualStyleBackColor = true;
+            this.StartAppPoolBtn.Click += new System.EventHandler(this.StartAppPoolBtn_Click);
+            // 
+            // RestartSitesBtn
+            // 
+            this.RestartSitesBtn.Location = new System.Drawing.Point(36, 71);
+            this.RestartSitesBtn.Name = "RestartSitesBtn";
+            this.RestartSitesBtn.Size = new System.Drawing.Size(75, 23);
+            this.RestartSitesBtn.TabIndex = 3;
+            this.RestartSitesBtn.Text = "Restart Sites";
+            this.RestartSitesBtn.UseVisualStyleBackColor = true;
+            this.RestartSitesBtn.Click += new System.EventHandler(this.RestartSitesBtn_Click);
+            // 
+            // StartSitesBtn
+            // 
+            this.StartSitesBtn.Location = new System.Drawing.Point(36, 12);
+            this.StartSitesBtn.Name = "StartSitesBtn";
+            this.StartSitesBtn.Size = new System.Drawing.Size(75, 23);
+            this.StartSitesBtn.TabIndex = 2;
+            this.StartSitesBtn.Text = "Start Sites";
+            this.StartSitesBtn.UseVisualStyleBackColor = true;
+            this.StartSitesBtn.Click += new System.EventHandler(this.StartSitesBtn_Click);
+            // 
+            // StopSitesBtn
+            // 
+            this.StopSitesBtn.Location = new System.Drawing.Point(36, 41);
+            this.StopSitesBtn.Name = "StopSitesBtn";
+            this.StopSitesBtn.Size = new System.Drawing.Size(75, 23);
+            this.StopSitesBtn.TabIndex = 0;
+            this.StopSitesBtn.Text = "Stop Sites";
+            this.StopSitesBtn.UseVisualStyleBackColor = true;
+            this.StopSitesBtn.Click += new System.EventHandler(this.StopSitesBtn_Click);
+            // 
+            // FilterTxt
+            // 
+            this.FilterTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FilterTxt.Location = new System.Drawing.Point(0, 0);
+            this.FilterTxt.Margin = new System.Windows.Forms.Padding(0);
+            this.FilterTxt.Name = "FilterTxt";
+            this.FilterTxt.Size = new System.Drawing.Size(629, 20);
+            this.FilterTxt.TabIndex = 8;
+            this.FilterTxt.TextChanged += new System.EventHandler(this.FilterTxt_TextChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.FilterTxt);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(629, 20);
+            this.panel2.TabIndex = 2;
+            // 
             // IISManagerFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(774, 479);
             this.Controls.Add(this.sitesGrid);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "IISManagerFrm";
             this.Text = "IIS Manager";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sitesGrid)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.siteRecordBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -292,6 +317,8 @@
         private System.Windows.Forms.Button StopAppPoolBtn;
         private System.Windows.Forms.Button StartAppPoolBtn;
         private System.Windows.Forms.Button ChangeDirBtn;
+        private System.Windows.Forms.TextBox FilterTxt;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
