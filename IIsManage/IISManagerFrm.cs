@@ -276,7 +276,7 @@ namespace IIsManage
 
         private void ApplyFilter()
         {
-            siteRecordsView.ApplyFilter(record => record.Name.Contains(FilterTxt.Text) || record.Path.Contains(FilterTxt.Text));
+            siteRecordsView.ApplyFilter(record => record.Name.ToLower().Contains(FilterTxt.Text.ToLower()) || record.Path.ToLower().Contains(FilterTxt.Text.ToLower()));
         }
     }
 }
