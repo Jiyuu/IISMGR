@@ -203,6 +203,8 @@ namespace IIsManage
                         ovo.EndEdit();
                     }
                 }
+                sm.CommitChanges();
+
             }
 
 
